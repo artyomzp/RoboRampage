@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bqc7nim37u31k"]
+
+[node name="Sandbox" type="Node3D" unique_id=1058227471]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1795357704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(64, 1, 64)
