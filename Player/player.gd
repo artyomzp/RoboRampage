@@ -6,6 +6,8 @@ const JUMP_VELOCITY = 4.5
 
 var mouse_motion := Vector2.ZERO
 
+@onready var camera_pivot: Node3D = $CameraPivot
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -41,6 +43,10 @@ func _input(event: InputEvent) -> void:
 		
 func handle_camera_rotation() -> void:
 	rotate_y(mouse_motion.x)
+	camera_pivot.rotate_x(mouse_motion.y)
+	camera_pivot.rotation_degrees.x = clampf(
+		camera_pivot.rotation_degrees.x, -90.0, 90.0
+	)
 	mouse_motion = Vector2.ZERO
 		
 	

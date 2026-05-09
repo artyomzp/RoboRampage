@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvym6mba8dwr6"]
 
 [ext_resource type="Script" uid="uid://ykd2vxoih6pt" path="res://Player/player.gd" id="1_l8h54"]
+[ext_resource type="Script" uid="uid://bt0pix4sb4lx7" path="res://Player/SmoothCamera.gd" id="2_4ntmi"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hvfyp"]
 
@@ -15,5 +16,10 @@ mesh = SubResource("CapsuleMesh_hvfyp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=826540120]
 shape = SubResource("CapsuleShape3D_l8h54")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=179515989]
+[node name="CameraPivot" type="Node3D" parent="." unique_id=341346112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="SmoothCamera" type="Camera3D" parent="CameraPivot" unique_id=179515989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+top_level = true
+script = ExtResource("2_4ntmi")
