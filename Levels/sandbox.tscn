@@ -36,7 +36,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1129864083]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0071105957, -0.0062656403, 0.004618168)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040124893, -0.006269455, 0.10131788)
 navigation_mesh = SubResource("NavigationMesh_fmlkh")
 
 [node name="LevelObjects" type="Node3D" parent="NavigationRegion3D" unique_id=93807518]
@@ -79,65 +79,65 @@ use_collision = true
 material = ExtResource("3_fmlkh")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="NavigationRegion3D/LevelObjects" unique_id=760958929]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.444429, 0.5, 22.706495)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.444429, 0.24287105, 22.706495)
 use_collision = true
 material = ExtResource("3_fmlkh")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="NavigationRegion3D/LevelObjects" unique_id=750429216]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396765, 0.5, 22.706495)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396765, 0.24287105, 22.706495)
 use_collision = true
 material = ExtResource("3_fmlkh")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="NavigationRegion3D/LevelObjects" unique_id=393467532]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.358952, 1.5, 22.706495)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.358952, 1.242871, 22.706495)
 use_collision = true
 material = ExtResource("3_fmlkh")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="NavigationRegion3D/LevelObjects" unique_id=499565275]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.389696, 2, 21.685495)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.389696, 1.742871, 21.685495)
 use_collision = true
 size = Vector3(1, 2, 1)
 material = ExtResource("3_fmlkh")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="NavigationRegion3D/LevelObjects" unique_id=122260885]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.389732, 0.5061163, 21.685602)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.389732, 0.24898732, 21.685602)
 use_collision = true
 material = ExtResource("3_fmlkh")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="NavigationRegion3D/LevelObjects" unique_id=2064615582]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.389696, 2.5, 20.666496)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.389696, 2.242871, 20.666496)
 use_collision = true
 size = Vector3(1, 3, 1)
 material = ExtResource("3_fmlkh")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="NavigationRegion3D/LevelObjects" unique_id=1723570023]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.389732, 0.5061163, 20.666906)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.389732, 0.24898732, 20.666906)
 use_collision = true
 material = ExtResource("3_fmlkh")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="NavigationRegion3D/LevelObjects" unique_id=1296480525]
-transform = Transform3D(-0.9997253, 0, -0.02343765, 0, 1, 0, 0.02343765, 0, -0.9997253, 11.362994, 0.5, 20.682121)
+transform = Transform3D(-0.9997253, 0, -0.02343765, 0, 1, 0, 0.02343765, 0, -0.9997253, 11.362994, 0.24287105, 20.682121)
 use_collision = true
 material = ExtResource("3_fmlkh")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="NavigationRegion3D/LevelObjects" unique_id=1406595454]
-transform = Transform3D(-0.9997253, 0, -0.02343765, 0, 1, 0, 0.02343765, 0, -0.9997253, 10.41092, 0.5, 20.704443)
+transform = Transform3D(-0.9997253, 0, -0.02343765, 0, 1, 0, 0.02343765, 0, -0.9997253, 10.41092, 0.24287105, 20.704443)
 use_collision = true
 material = ExtResource("3_fmlkh")
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="NavigationRegion3D/LevelObjects" unique_id=1496878556]
-transform = Transform3D(-0.9997253, 0, -0.02343765, 0, 1, 0, 0.02343765, 0, -0.9997253, 10.448723, 1.5, 20.703556)
+transform = Transform3D(-0.9997253, 0, -0.02343765, 0, 1, 0, 0.02343765, 0, -0.9997253, 10.448723, 1.242871, 20.703556)
 use_collision = true
 material = ExtResource("3_fmlkh")
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="NavigationRegion3D/LevelObjects" unique_id=731996873]
-transform = Transform3D(-0.9997253, 0, -0.02343765, 0, 1, 0, 0.02343765, 0, -0.9997253, 10.432572, 2, 21.681177)
+transform = Transform3D(-0.9997253, 0, -0.02343765, 0, 1, 0, 0.02343765, 0, -0.9997253, 10.432572, 1.742871, 21.681177)
 use_collision = true
 size = Vector3(1, 2, 1)
 material = ExtResource("3_fmlkh")
 
 [node name="CSGBox3D19" type="CSGBox3D" parent="NavigationRegion3D/LevelObjects" unique_id=974549446]
-transform = Transform3D(-0.9997253, 0, -0.02343765, 0, 1, 0, 0.02343765, 0, -0.9997253, 10.432534, 0.5061163, 21.68107)
+transform = Transform3D(-0.9997253, 0, -0.02343765, 0, 1, 0, 0.02343765, 0, -0.9997253, 10.432534, 0.24898732, 21.68107)
 use_collision = true
 material = ExtResource("3_fmlkh")
 
@@ -148,7 +148,7 @@ size = Vector3(1, 3, 1)
 material = ExtResource("3_fmlkh")
 
 [node name="CSGBox3D21" type="CSGBox3D" parent="NavigationRegion3D/LevelObjects" unique_id=1732319446]
-transform = Transform3D(-0.9997253, 0, -0.02343765, 0, 1, 0, 0.02343765, 0, -0.9997253, 9.3905525, 0.5061163, 19.624367)
+transform = Transform3D(-0.9997253, 0, -0.02343765, 0, 1, 0, 0.02343765, 0, -0.9997253, 9.3905525, 0.24898732, 19.624367)
 use_collision = true
 material = ExtResource("3_fmlkh")
 
