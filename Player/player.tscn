@@ -4,10 +4,72 @@
 [ext_resource type="Script" uid="uid://bt0pix4sb4lx7" path="res://Player/SmoothCamera.gd" id="2_4ntmi"]
 [ext_resource type="Script" uid="uid://ccqhecx6sdtpg" path="res://Player/Crosshair.gd" id="3_btcbx"]
 [ext_resource type="PackedScene" uid="uid://beqr6eeumy12m" path="res://Weapons/SMG.tscn" id="3_gwnis"]
+[ext_resource type="Texture2D" uid="uid://cwa8txdddtltd" path="res://Player/damage.png" id="5_k53q1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hvfyp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l8h54"]
+
+[sub_resource type="Animation" id="Animation_fhl08"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vtle1"]
+resource_name = "TakeDamage"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_od3ui"]
+_data = {
+&"RESET": SubResource("Animation_fhl08"),
+&"TakeDamage": SubResource("Animation_vtle1")
+}
 
 [node name="Player" type="CharacterBody3D" unique_id=1516725957 groups=["player"]]
 script = ExtResource("1_l8h54")
@@ -24,9 +86,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 [node name="SmoothCamera" type="Camera3D" parent="CameraPivot" unique_id=179515989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 top_level = true
+cull_mask = 1048573
 script = ExtResource("2_4ntmi")
 
 [node name="SMG" parent="CameraPivot/SmoothCamera" unique_id=1297568794 instance=ExtResource("3_gwnis")]
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="CameraPivot/SmoothCamera" unique_id=1001900893]
+remote_path = NodePath("../../../SubViewportContainer/SubViewport/WeaponCamera")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1951201506]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=160189908]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="WeaponCamera" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=545170466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+cull_mask = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1287579899]
 anchors_preset = 15
@@ -38,3 +122,17 @@ grow_vertical = 2
 [node name="Crosshair" type="Control" parent="CenterContainer" unique_id=425423645]
 layout_mode = 2
 script = ExtResource("3_btcbx")
+
+[node name="DamageTexture" type="TextureRect" parent="." unique_id=886559226]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+texture = ExtResource("5_k53q1")
+
+[node name="DamageAnimationPlayer" type="AnimationPlayer" parent="DamageTexture" unique_id=369684390]
+libraries/ = SubResource("AnimationLibrary_od3ui")
+autoplay = &"RESET"
