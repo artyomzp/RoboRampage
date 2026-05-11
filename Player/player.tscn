@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ccqhecx6sdtpg" path="res://Player/Crosshair.gd" id="3_btcbx"]
 [ext_resource type="PackedScene" uid="uid://beqr6eeumy12m" path="res://Weapons/SMG.tscn" id="3_gwnis"]
 [ext_resource type="Texture2D" uid="uid://cwa8txdddtltd" path="res://Player/damage.png" id="5_k53q1"]
+[ext_resource type="PackedScene" uid="uid://dvg1aht7soteb" path="res://Player/game_over_menu.tscn" id="6_fhl08"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hvfyp"]
 
@@ -136,3 +137,6 @@ texture = ExtResource("5_k53q1")
 [node name="DamageAnimationPlayer" type="AnimationPlayer" parent="DamageTexture" unique_id=369684390]
 libraries/ = SubResource("AnimationLibrary_od3ui")
 autoplay = &"RESET"
+
+[node name="GameOverMenu" parent="." unique_id=281842058 instance=ExtResource("6_fhl08")]
+visible = false
