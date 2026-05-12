@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://bt0pix4sb4lx7" path="res://Player/SmoothCamera.gd" id="2_4ntmi"]
 [ext_resource type="Script" uid="uid://ccqhecx6sdtpg" path="res://Player/Crosshair.gd" id="3_btcbx"]
 [ext_resource type="PackedScene" uid="uid://beqr6eeumy12m" path="res://Weapons/SMG.tscn" id="3_gwnis"]
+[ext_resource type="Script" uid="uid://voc5e7wcphg6" path="res://Player/weapon_handler.gd" id="3_vtle1"]
 [ext_resource type="Texture2D" uid="uid://cwa8txdddtltd" path="res://Player/damage.png" id="5_k53q1"]
+[ext_resource type="PackedScene" uid="uid://uf2pwh653qqj" path="res://Weapons/Rifle.tscn" id="5_od3ui"]
 [ext_resource type="PackedScene" uid="uid://dvg1aht7soteb" path="res://Player/game_over_menu.tscn" id="6_fhl08"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hvfyp"]
@@ -90,8 +92,6 @@ top_level = true
 cull_mask = 1048573
 script = ExtResource("2_4ntmi")
 
-[node name="SMG" parent="CameraPivot/SmoothCamera" unique_id=1297568794 instance=ExtResource("3_gwnis")]
-
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="CameraPivot/SmoothCamera" unique_id=1001900893]
 remote_path = NodePath("../../../SubViewportContainer/SubViewport/WeaponCamera")
 
@@ -112,6 +112,15 @@ render_target_update_mode = 4
 [node name="WeaponCamera" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=545170466]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 cull_mask = 2
+
+[node name="WeaponHandler" type="Node3D" parent="SubViewportContainer/SubViewport/WeaponCamera" unique_id=2108728029 node_paths=PackedStringArray("weapon_1", "weapon_2")]
+script = ExtResource("3_vtle1")
+weapon_1 = NodePath("Rifle")
+weapon_2 = NodePath("SMG")
+
+[node name="SMG" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=1297568794 instance=ExtResource("3_gwnis")]
+
+[node name="Rifle" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" unique_id=1131452635 instance=ExtResource("5_od3ui")]
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1287579899]
 anchors_preset = 15

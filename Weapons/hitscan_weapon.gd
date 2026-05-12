@@ -20,7 +20,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if automatic:
-		if Input.is_action_pressed("fire"):
+		if Input.is_action_pressed("fire"): 
 			if cooldown_timer.is_stopped():
 				shoot()
 	else:
