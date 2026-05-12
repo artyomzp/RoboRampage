@@ -2,10 +2,16 @@
 
 [ext_resource type="FontFile" uid="uid://4735vhkdera8" path="res://Assets/Supermercado_One/SupermercadoOne-Regular.ttf" id="1_kxqsi"]
 [ext_resource type="Script" uid="uid://4fc41wx7wamc" path="res://Player/game_over_menu.gd" id="2_1bqx8"]
+[ext_resource type="Shader" uid="uid://bmtxl7y62f0fd" path="res://Player/game_over_menu.tres" id="3_1bqx8"]
 
 [sub_resource type="Theme" id="Theme_o38b4"]
 default_font = ExtResource("1_kxqsi")
 default_font_size = 64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o38b4"]
+shader = ExtResource("3_1bqx8")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1bqx8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j2bcs"]
 font_size = 96
@@ -20,6 +26,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_o38b4")
 script = ExtResource("2_1bqx8")
+
+[node name="BackgroundBlur" type="TextureRect" parent="." unique_id=1220779702]
+material = SubResource("ShaderMaterial_o38b4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_1bqx8")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1560297753]
 layout_mode = 1
